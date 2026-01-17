@@ -1,16 +1,277 @@
 {
-	"manufacturer": "MCO Home",
-	"manufacturerId": "0x015f",
-	"label": "MH-5900",
-	"description": "Thermostat",
-	"devices": [
-		{
-			"productType": "0x810a",
-			"productId": "0x5900"
-		}
-	],
-	"firmwareVersion": {
-		"min": "0.0",
-		"max": "255.255"
-	}
+  "manufacturer": "MCO Home",
+  "manufacturerId": "0x015f",
+  "label": "MH-5900",
+  "description": "Z-Wave Thermostat",
+  "devices": [
+    {
+      "productType": "0x810a",
+      "productId": "0x5900"
+    }
+  ],
+  "firmwareVersion": {
+    "min": "0.0",
+    "max": "255.255"
+  },
+  "paramInformation": [
+    {
+      "#": "1",
+      "label": "Temperature unit",
+      "description": "Select temperature unit used by the thermostat",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 1,
+      "options": [
+        { "label": "Celsius", "value": 0 },
+        { "label": "Fahrenheit", "value": 1 }
+      ]
+    },
+    {
+      "#": "2",
+      "label": "Temperature difference reporting",
+      "description": "Report temperature change when threshold exceeded",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 255,
+      "defaultValue": 10
+    },
+    {
+      "#": "3",
+      "label": "Humidity difference reporting",
+      "description": "Report humidity change threshold (%)",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 99,
+      "defaultValue": 4
+    },
+    {
+      "#": "12",
+      "label": "Power failure memory",
+      "description": "Restore previous state after power loss",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 1,
+      "options": [
+        { "label": "Do not restore", "value": 0 },
+        { "label": "Restore", "value": 1 }
+      ]
+    },
+    {
+      "#": "13",
+      "label": "Screen off timer",
+      "description": "Minutes before screen turns off (0 = never)",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 90,
+      "defaultValue": 1
+    },
+    {
+      "#": "14",
+      "label": "Beep",
+      "description": "Enable button beep",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 1,
+      "options": [
+        { "label": "Off", "value": 0 },
+        { "label": "On", "value": 1 }
+      ]
+    },
+    {
+      "#": "15",
+      "label": "Backlight brightness",
+      "description": "Backlight brightness level",
+      "valueSize": 1,
+      "minValue": 1,
+      "maxValue": 8,
+      "defaultValue": 7
+    },
+    {
+      "#": "16",
+      "label": "Temperature upper limit",
+      "description": "Maximum allowed setpoint",
+      "valueSize": 1,
+      "minValue": 1,
+      "maxValue": 99,
+      "defaultValue": 98
+    },
+    {
+      "#": "17",
+      "label": "Temperature lower limit",
+      "description": "Minimum allowed setpoint",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 98,
+      "defaultValue": 41
+    },
+    {
+      "#": "18",
+      "label": "Temperature offset",
+      "description": "Temperature calibration offset",
+      "valueSize": 1,
+      "minValue": -99,
+      "maxValue": 99,
+      "defaultValue": 0
+    },
+    {
+      "#": "19",
+      "label": "Humidity offset",
+      "description": "Humidity calibration offset (%)",
+      "valueSize": 1,
+      "minValue": -20,
+      "maxValue": 20,
+      "defaultValue": 0
+    },
+    {
+      "#": "20",
+      "label": "Fan & humidity display mode",
+      "description": "Controls fan and humidity display behavior",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 3,
+      "defaultValue": 0
+    },
+    {
+      "#": "21",
+      "label": "Panel lock",
+      "description": "Front panel lock mode",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 3,
+      "defaultValue": 0
+    },
+    {
+      "#": "22",
+      "label": "Stage 1 hysteresis",
+      "description": "Temperature hysteresis for stage 1",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 99,
+      "defaultValue": 20
+    },
+    {
+      "#": "23",
+      "label": "Stage 2 hysteresis",
+      "description": "Temperature hysteresis for stage 2",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 99,
+      "defaultValue": 20
+    },
+    {
+      "#": "24",
+      "label": "Stage 3 hysteresis",
+      "description": "Temperature hysteresis for stage 3",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 99,
+      "defaultValue": 20
+    },
+    {
+      "#": "25",
+      "label": "System control type",
+      "description": "HVAC system type (per manual)",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 12,
+      "defaultValue": 7
+    },
+    {
+      "#": "26",
+      "label": "Changeover valve logic",
+      "description": "Heat pump reversing valve logic",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 0,
+      "options": [
+        { "label": "O (energize in cool)", "value": 0 },
+        { "label": "B (energize in heat)", "value": 1 }
+      ]
+    },
+    {
+      "#": "27",
+      "label": "Compressor protection time",
+      "description": "Compressor minimum off-time (minutes)",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 120,
+      "defaultValue": 1
+    },
+    {
+      "#": "28",
+      "label": "Emergency heat mode",
+      "description": "Enable emergency heat",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 0
+    },
+    {
+      "#": "29",
+      "label": "Schedule display selection",
+      "description": "Schedule display mode",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 2,
+      "defaultValue": 0
+    },
+    {
+      "#": "30",
+      "label": "Fan shutdown delay",
+      "description": "Fan run-on time after compressor stops",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 127,
+      "defaultValue": 0
+    },
+    {
+      "#": "31",
+      "label": "Compressor countdown display",
+      "description": "Show compressor protection countdown",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 0
+    },
+    {
+      "#": "32",
+      "label": "Enable auxiliary heating",
+      "description": "Enable auxiliary heating output",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 1
+    },
+    {
+      "#": "33",
+      "label": "Screen saver brightness",
+      "description": "Brightness when screen saver is active",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 16,
+      "defaultValue": 3
+    },
+    {
+      "#": "45",
+      "label": "Schedule function",
+      "description": "Enable weekly schedule",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 0
+    },
+    {
+      "#": "255",
+      "label": "Factory reset",
+      "description": "Restore factory settings",
+      "valueSize": 1,
+      "minValue": 0,
+      "maxValue": 1,
+      "defaultValue": 0
+    }
+  ]
 }
